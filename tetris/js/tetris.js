@@ -11,7 +11,7 @@ class Game {
     // Cuando una pieza se derrumba con algo en su parte inferior, ¿cuánto tiempo hay que esperar para poner otra pieza? (en ms)
     static TIMEOUT_LOCK_PUT_NEXT_PIECE = 400;
     // Velocidad de caída de la pieza (en ms)
-    static PIECE_SPEED = 700;
+    static PIECE_SPEED = 1000;
     // Tiempo de animación cuando se elimina una fila
     static DELETE_ROW_ANIMATION = 500;
     // Score to add when a square dissapears (for each square)
