@@ -5,153 +5,173 @@
   <meta charset="UTF-8">
   <title>Generador de Contraseñas</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kanit:300,500,700'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Kanit:300,500,700'>
 
-<style type="text/css">
-body {
-  min-height: 100vh;
-  padding-top: 100px;
-  background: #e8eaed;
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
+<style>
+  body {
+    min-height: 100vh;
+    padding-top: 100px;
+    background: #e8eaed;
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
 }
 
 .info {
-  font-size: 0.9rem;
-  text-align: left;
+    font-size: 0.9rem;
+    text-align: left;
 }
+
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
-  margin: 0;
+    font-weight: 500;
+    margin: 0;
 }
+
 .title-section {
-  background: #fd9d08;
-  padding: 2px 10px;
-  color: white;
+    background: #fd9d08;
+    padding: 2px 10px;
+    color: white;
 }
+
 h1 {
-  font-size: 1.1rem;
+    font-size: 1.1rem;
 }
+
 .inner-section {
-  padding: 20px;
+    padding: 20px;
 }
+
 .wrapper {
-  overflow: hidden;
-  margin: auto;
-  width: 90%;
-  max-width: 380px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-flow: column wrap;
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    max-width: 380px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-flow: column wrap;
 }
+
 .wrapper .password-section {
-  position: relative;
-  border: 2px solid lightgray;
-  color: gray;
-  margin-top: 20px;
-  padding: 2px 2px 2px 8px;
-  border-radius: 5px;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
+    position: relative;
+    border: 2px solid lightgray;
+    color: gray;
+    margin-top: 20px;
+    padding: 2px 2px 2px 8px;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
+
 .wrapper .password-section .alert {
-  position: absolute;
-  padding: 0 5px;
-  border-radius: 2px;
-  width: 21ch;
-  height: 89%;
-  left: 2px;
-  top: -100%;
-  width: 96%;
-  text-align: center;
-  color: #333;
-  opacity: 0;
-  transition: all 0.5s ease;
+    position: absolute;
+    padding: 0 5px;
+    border-radius: 2px;
+    width: 21ch;
+    height: 89%;
+    left: 2px;
+    top: -100%;
+    width: 96%;
+    text-align: center;
+    color: #333;
+    opacity: 0;
+    transition: all 0.5s ease;
 }
+
 .wrapper .password-section .alert.success {
-  background: rgb(29,161,242, 0.9);
-  opacity: 1;
+    background: rgb(29,161,242, 0.9);
+    opacity: 1;
 }
+
 .wrapper .password-section .alert.fail {
-  background: rgb(230,0,35, 0.9);
-  color: white;
-  opacity: 1;
+    background: rgb(230,0,35, 0.9);
+    color: white;
+    opacity: 1;
 }
+
 .wrapper .password-section .copy {
-  height: 100%;
-  width: 50px;
-  background: #e60023;
-  border: 0;
-  color: white;
-  border-radius: 2px;
-  padding: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    height: 100%;
+    width: 50px;
+    background: #e60023;
+    border: 0;
+    color: white;
+    border-radius: 2px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .wrapper .password-section .copy:hover {
-  background: #ff7a00;
+    background: #ff7a00;
 }
+
 .wrapper .controls {
-  text-align: left;
-  display: flex;
-  flex-flow: column wrap;
+    text-align: left;
+    display: flex;
+    flex-flow: column wrap;
 }
+
 .wrapper .controls .control {
-  padding: 3px;
-  border-bottom: 1px solid lightgray;
-  width: 100%;
-  margin: 2px;
+    padding: 3px;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+    margin: 2px;
 }
+
 .wrapper .controls .generate {
-  width: 100%;
-  border: 0;
-  color: white;
-  background: #fd9d08;
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 10px;
-  transition: all 0.3s ease;
+    width: 100%;
+    border: 0;
+    color: white;
+    background: #fd9d08;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
 }
+
 .wrapper .controls .generate:hover {
-  background: #ff7a00;
+    background: #ff7a00;
 }
+
 #length-box {
-  width: 100%;
+    width: 100%;
 }
+
 #length-box input {
-  width: 100%;
+    width: 100%;
 }
+
 input[type="checkbox"] {
-  visibility: hidden;
+    visibility: hidden;
 }
+
 label.check-label {
-  position: relative;
+    position: relative;
 }
+
 label.check-label:before {
-  content: "";
-  height: 1rem;
-  width: 1rem;
-  left: -24px;
-  top: 0;
-  border: 0.5px solid lightgray;
-  position: absolute;
-  background: transparent;
-  transition: all 0.3s cubic-bezier(0, 0.82, 1, 1.81);
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: -24px;
+    top: 0;
+    border: 0.5px solid lightgray;
+    position: absolute;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0, 0.82, 1, 1.81);
 }
+
 input[type="checkbox"]:checked + label.check-label:before {
-  content: "";
-  font-family: "FontAwesome";
-  font-size: 0.8rem;
-  color: #212121;
-  text-align: center;
-  background: #00e676;
-  transition: all 0.3s cubic-bezier(0, 0.82, 1, 1.81);
+    content: "";
+    font-family: "FontAwesome";
+    font-size: 0.8rem;
+    color: #212121;
+    text-align: center;
+    background: #00e676;
+    transition: all 0.3s cubic-bezier(0, 0.82, 1, 1.81);
 }
 </style>
-
 </head>
 
 <body>
@@ -195,19 +215,19 @@ input[type="checkbox"]:checked + label.check-label:before {
     </div>
     <div class="control">
       <input type="checkbox" id="lowercase">
-      <label class="check-label" for="lowercase"><span class="checkbox">Incluir Minusculas</span></label>
+      <label class="check-label" for="lowercase"><span class="checkbox">Incluir Minúsculas</span></label>
     </div>
     <div class="control">
       <input type="checkbox" id="uppercase">
-      <label class="check-label" for="uppercase"><span class="checkbox">Incluir Mayusculas</span></label>
+      <label class="check-label" for="uppercase"><span class="checkbox">Incluir Mayúsculas</span></label>
     </div>
     <div class="control">
       <input type="checkbox" id="numbers">
-      <label class="check-label" for="numbers"><span class="checkbox">Incluir Numeros</span></label>
+      <label class="check-label" for="numbers"><span class="checkbox">Incluir Números</span></label>
     </div>
     <div class="control">
       <input type="checkbox" id="punctuation">
-      <label class="check-label" for="punctuation"><span class="checkbox">Incluir Caracteres Especiales </span></label>
+      <label class="check-label" for="punctuation"><span class="checkbox">Incluir Caracteres Especiales</span></label>
     </div>
     
     <button class="generate" id="generate">Generar!</button>
@@ -216,86 +236,7 @@ input[type="checkbox"]:checked + label.check-label:before {
 </div>
 
 <script src='https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js'></script>
-<script> 
-
-var clipboard = new Clipboard('.copy')
-var lowercase = "abcdefghijklmnopqrstuvwxyz",
-  uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  numbers = "0123456789",
-  punctuation = "!@#$%^&*()_+~`|}{[]:;?><,./-=",
-  lowercaseInput = document.getElementById("lowercase"),
-  uppercaseInput = document.getElementById("uppercase"),
-  punctuationInput = document.getElementById("punctuation"),
-  numbersInput = document.getElementById("numbers"),
-  lengthInput = document.getElementById("length"),
-  passwordFeild = document.getElementById("pass-field"),
-  generateButton = document.getElementById("generate"),
-  copyButton = document.getElementById("copy"),
-  plength,
-  userPassword,
-  passwordCharSet;
-
-function generate() {
-  userPassword = "";
-  passwordCharSet = "";
-  if (lowercaseInput.checked) {
-    passwordCharSet += lowercase;
-  }
-  if (uppercaseInput.checked) {
-    passwordCharSet += uppercase;
-  }
-  if (punctuationInput.checked) {
-    passwordCharSet += punctuation;
-  }
-  if (numbersInput.checked) {
-    passwordCharSet += numbers;
-  }
-  plength = Number(lengthInput.value);
-
-  for (let i = 0; i < plength; i++) {
-    userPassword += passwordCharSet.charAt(
-      Math.floor(Math.random() * passwordCharSet.length)
-    );
-  }
-  if (userPassword == "") {
-    let alertbox = document.getElementById('alert');
-    alertbox.innerHTML = "Seleccione una opción antes de generar!"
-    alertbox.classList.add('fail');
-    setTimeout(function(){ 
-      alertbox.classList.remove('fail');
-    }, 3000);
-  } else {
-    passwordFeild.innerHTML = userPassword;
-  }
-  copyButton.setAttribute("data-clipboard-text", userPassword)
-}
-generateButton.addEventListener("click", generate);
-
-clipboard.on('success', function(e) {
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-    let alertbox = document.getElementById('alert');
-    alertbox.innerHTML = "Copiado!"
-    alertbox.classList.add('success');
-    setTimeout(function(){ 
-      alertbox.classList.remove('success');
-    }, 3000);
-    
-    e.clearSelection();
-});
-
-clipboard.on('error', function(e) {
-    console.error('Action:', e.action);
-    console.error('Trigger:', e.trigger);
-  let alertbox = document.getElementById('alert');
-    alertbox.innerHTML = "Intente seleccionar el texto a copiar"
-    alertbox.classList.add('fail');
-    setTimeout(function(){ 
-      alertbox.classList.remove('fail');
-    }, 3000);
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
