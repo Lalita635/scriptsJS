@@ -10,3 +10,4 @@ Este juego de  **memorama en JS**  que vengo a presentar tiene las siguientes ca
 -   Intentos máximos modificables
 -   Alerta para cuando ganas y cuando pierdes
 -   Código fuente modificable
+

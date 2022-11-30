@@ -28,26 +28,6 @@ new Vue({
         esperandoTimeout: false,
     }),
     methods: {
-        mostrarCreditos() {
-            Swal.fire({
-                title: "Acerca de",
-                html: `Creado por <a href="//parzibyte.me/blog">Luis Cabrera Benito</a>
-                <br>
-                <strong>Créditos</strong>
-                <br>
-                Imagen de signo de interrogación: 
-                <div>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> 
-                    from <a rel="nofollow" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
-                    is licensed by 
-                    <a rel="nofollow" href="http://creativecommons.org/licenses/by/3.0/" 
-                    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-                </div>
-                `,
-                confirmButtonText: "Cerrar",
-                allowOutsideClick: false,
-                allowEscapeKey: false,
-            });
-        },
         // Método que muestra la alerta indicando que el jugador ha perdido; después
         // de mostrarla, se reinicia el juego
         indicarFracaso() {
@@ -165,7 +145,7 @@ new Vue({
                 memorama.push(imagenDeMemorama, Object.assign({}, imagenDeMemorama));
             });
 
-            // Sacudir o mover arreglo; es decir, hacerlo aleatorio
+            // Mezclar arreglo
             this.mezclarArreglo(memorama);
 
             // Dividirlo en subarreglos o columnas
@@ -179,8 +159,7 @@ new Vue({
             // Asignar a instancia de Vue para que lo dibuje
             this.memorama = memoramaDividido;
         },
-        // Método que precarga las imágenes para que las mismas ya estén cargadas
-        // cuando el usuario gire la tarjeta
+        // Método que precarga las imágenes para que las mismas ya estén cargadas cuando el usuario gire la tarjeta
         precargarImagenes() {
             // Mostrar la alerta
             Swal.fire({
@@ -211,8 +190,7 @@ new Vue({
                         Swal.close();
                     }
                 });
-                // Agregamos la imagen y la removemos instantáneamente, así no se muestra
-                // pero sí se carga
+                // Agregamos la imagen y la removemos instantáneamente, así no se muestra pero sí se carga
                 document.body.appendChild(imagen);
                 document.body.removeChild(imagen);
             });
